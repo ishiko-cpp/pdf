@@ -13,6 +13,7 @@
 #include "PDF/PDFDictionaryObject.hpp"
 #include "PDF/PDFFile.hpp"
 #include "PDF/PDFHeader.hpp"
+#include "PDF/PDFLiteralStringObject.hpp"
 #include "PDF/PDFObject.hpp"
 #include "PDF/PDFOutputStream.hpp"
 #include "PDF/PDFTrailer.hpp"

@@ -9,6 +9,7 @@
 #include "PDFDictionaryObjectTests.hpp"
 #include "PDFFileTests.hpp"
 #include "PDFHeaderTests.hpp"
+#include "PDFLiteralStringObjectTests.hpp"
 #include "PDFNameObjectTests.hpp"
 #include "PDFOutputStreamTests.hpp"
 #include "PDFTrailerTests.hpp"
@@ -33,6 +34,7 @@ int main(int argc, char* argv[])
 
         TestSequence& theTests = theTestHarness.tests();
         theTests.append<PDFOutputStreamTests>();
+        theTests.append<PDFLiteralStringObjectTests>();
         theTests.append<PDFNameObjectTests>();
         theTests.append<PDFDictionaryObjectTests>();
         theTests.append<PDFHeaderTests>();

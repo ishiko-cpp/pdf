@@ -9,6 +9,7 @@
 
 #include "PDFNameObject.hpp"
 #include "PDFObject.hpp"
+#include "PDFOutputStream.hpp"
 #include <map>
 #include <memory>
 
@@ -18,6 +19,8 @@ namespace Ishiko
     {
     public:
         void set(const PDFNameObject& key, std::unique_ptr<PDFObject> value);
+
+        void serialize(PDFOutputStream& output_stream) const;
 
     private:
         std::map<PDFNameObject, std::unique_ptr<PDFObject>> m_entries;
