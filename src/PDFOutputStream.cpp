@@ -17,7 +17,7 @@ PDFOutputStream PDFOutputStream::Create(const boost::filesystem::path& path, Err
 
 void PDFOutputStream::create(const boost::filesystem::path& path, Error& error)
 {
-    m_file.create(path.c_str(), error);
+    m_file.create(path, error);
 }
 
 void PDFOutputStream::close()
