@@ -6,6 +6,7 @@
 
 #include "PDFHeaderTests.hpp"
 #include "Ishiko/PDF/PDFHeader.hpp"
+#include "Ishiko/PDF/PDFOutputStream.hpp"
 
 using namespace Ishiko;
 

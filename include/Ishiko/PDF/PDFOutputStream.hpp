@@ -9,6 +9,7 @@
 
 #include <Ishiko/FileSystem.hpp>
 #include <boost/filesystem.hpp>
+#include <string>
 
 namespace Ishiko
 {
@@ -21,6 +22,7 @@ namespace Ishiko
         void close();
 
         void write(const char* str);
+        void write(const std::string& str);
 
     private:
         TextFile m_file;

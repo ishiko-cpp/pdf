@@ -29,3 +29,8 @@ void PDFOutputStream::write(const char* str)
 {
     m_file.write(str);
 }
+
+void PDFOutputStream::write(const std::string& str)
+{
+    m_file.write(str);
+}
