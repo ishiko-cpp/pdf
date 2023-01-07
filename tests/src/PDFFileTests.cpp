@@ -5,6 +5,7 @@
 */
 
 #include "PDFFileTests.hpp"
+#include "Ishiko/PDF/PDFFile.hpp"
 
 using namespace Ishiko;
 
@@ -16,4 +17,7 @@ PDFFileTests::PDFFileTests(const TestNumber& number, const TestContext& context)
 
 void PDFFileTests::ConstructorTest1(Test& test)
 {
+    PDFFile pdf_file;
+
+    ISHIKO_TEST_PASS();
 }

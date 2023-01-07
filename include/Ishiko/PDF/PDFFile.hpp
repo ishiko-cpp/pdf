@@ -7,4 +7,11 @@
 #ifndef GUARD_ISHIKO_CPP_PDF_PDFFILE_HPP
 #define GUARD_ISHIKO_CPP_PDF_PDFFILE_HPP
 
+namespace Ishiko
+{
+    class PDFFile
+    {
+    };
+}
+
 #endif
