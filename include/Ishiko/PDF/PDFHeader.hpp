@@ -7,10 +7,14 @@
 #ifndef GUARD_ISHIKO_CPP_PDF_PDFHEADER_HPP
 #define GUARD_ISHIKO_CPP_PDF_PDFHEADER_HPP
 
+#include "PDFOutputStream.hpp"
+
 namespace Ishiko
 {
     class PDFHeader
     {
+    public:
+        void serialize(PDFOutputStream& output_stream) const;
     };
 }
 
