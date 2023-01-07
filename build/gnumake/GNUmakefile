@@ -33,6 +33,15 @@ override CXXFLAGS += -O2
 else ifneq (,$(config))
 $(warning Unknown configuration "$(config)")
 endif
+#
+# Additionally, this makefile is customizable with the following
+# settings:
+#
+#      ISHIKO_CPP_BASEPLATFORM_ROOT  Path to the Ishiko BasePlatform installation
+#      ISHIKO_CPP_ERRORS_ROOT        Path to the Ishiko Errors installation
+#      ISHIKO_CPP_IO_ROOT            Path to the Ishiko/C++ IO installation
+#      ISHIKO_CPP_BOOST_ROOT         Path to the Boost installation
+#      ISHIKO_CPP_FILESYSTEM_ROOT    Path to the Ishiko FileSystem installation
 
 # Use "make RANLIB=''" for platforms without ranlib.
 RANLIB ?= ranlib
@@ -54,6 +63,24 @@ _builddir := $(if $(findstring $(abspath $(builddir)),$(builddir)),,../../)$(bui
 _builddir_error := $(shell mkdir -p $(_builddir) 2>&1)
 $(if $(_builddir_error),$(error Failed to create build directory: $(_builddir_error)))
 endif
+
+# ------------
+# Configurable settings:
+# 
+
+# Path to the Ishiko BasePlatform installation
+ISHIKO_CPP_BASEPLATFORM_ROOT ?= $(ISHIKO_CPP)/base-platform
+# Path to the Ishiko Errors installation
+ISHIKO_CPP_ERRORS_ROOT ?= $(ISHIKO_CPP)/errors
+# Path to the Ishiko/C++ IO installation
+ISHIKO_CPP_IO_ROOT ?= $(ISHIKO_CPP)/io
+# Path to the Boost installation
+ISHIKO_CPP_BOOST_ROOT ?= $(ISHIKO_CPP_THIRD_PARTY_BOOST)
+# Path to the Ishiko FileSystem installation
+ISHIKO_CPP_FILESYSTEM_ROOT ?= $(ISHIKO_CPP)/filesystem
+
+# ------------
+
 all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoPDF-d,IshikoPDF).a
 
 ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoPDF-d,IshikoPDF).a: $(_builddir)IshikoPDF_PDFBody.o $(_builddir)IshikoPDF_PDFCrossReferenceTable.o $(_builddir)IshikoPDF_PDFDictionaryObject.o $(_builddir)IshikoPDF_PDFFile.o $(_builddir)IshikoPDF_PDFHeader.o $(_builddir)IshikoPDF_PDFOutputStream.o $(_builddir)IshikoPDF_PDFTrailer.o
@@ -61,25 +88,25 @@ all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoPDF-d,Is
 	$(RANLIB) $@
 
 $(_builddir)IshikoPDF_PDFBody.o: ../../src/PDFBody.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFBody.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFBody.cpp
 
 $(_builddir)IshikoPDF_PDFCrossReferenceTable.o: ../../src/PDFCrossReferenceTable.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFCrossReferenceTable.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFCrossReferenceTable.cpp
 
 $(_builddir)IshikoPDF_PDFDictionaryObject.o: ../../src/PDFDictionaryObject.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFDictionaryObject.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFDictionaryObject.cpp
 
 $(_builddir)IshikoPDF_PDFFile.o: ../../src/PDFFile.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFFile.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFFile.cpp
 
 $(_builddir)IshikoPDF_PDFHeader.o: ../../src/PDFHeader.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFHeader.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFHeader.cpp
 
 $(_builddir)IshikoPDF_PDFOutputStream.o: ../../src/PDFOutputStream.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFOutputStream.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFOutputStream.cpp
 
 $(_builddir)IshikoPDF_PDFTrailer.o: ../../src/PDFTrailer.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFTrailer.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFTrailer.cpp
 
 clean:
 	rm -f $(_builddir)*.o

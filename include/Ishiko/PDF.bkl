@@ -1,10 +1,13 @@
+ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/filesystem/include/Ishiko/FileSystem.bkl;
+
 setting ISHIKO_CPP_PDF_ROOT
 {
     help = "Path to the Ishiko PDF installation";
     default = '$(ISHIKO_CPP)/pdf';
 }
 
-template IshikoPDF
+template IshikoPDF : IshikoFileSystem
 {
     includedirs += $(ISHIKO_CPP_PDF_ROOT)/include;
 
