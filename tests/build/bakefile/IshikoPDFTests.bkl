@@ -16,7 +16,7 @@ program IshikoPDFTests : IshikoTestFrameworkCore
     if ($(toolset) == gnu)
     {
         cxx-compiler-options = "-std=c++11";
-        libs += IshikoTestFrameworkCore IshikoConfiguration IshikoXML IshikoTime IshikoText IshikoErrors;
+        libs += IshikoTestFrameworkCore IshikoConfiguration IshikoXML IshikoFileSystem IshikoTime IshikoText IshikoErrors;
         libs += fmt boost_filesystem;
     }
 
