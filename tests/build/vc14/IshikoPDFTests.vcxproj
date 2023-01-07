@@ -162,6 +162,7 @@
     <ClCompile Include="..\..\src\PDFFileTests.cpp" />
     <ClCompile Include="..\..\src\PDFHeaderTests.cpp" />
     <ClCompile Include="..\..\src\PDFDictionaryObjectTests.cpp" />
+    <ClCompile Include="..\..\src\PDFOutputStreamTests.cpp" />
     <ClCompile Include="..\..\src\PDFTrailerTests.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +171,7 @@
     <ClInclude Include="..\..\src\PDFFileTests.hpp" />
     <ClInclude Include="..\..\src\PDFHeaderTests.hpp" />
     <ClInclude Include="..\..\src\PDFDictionaryObjectTests.hpp" />
+    <ClInclude Include="..\..\src\PDFOutputStreamTests.hpp" />
     <ClInclude Include="..\..\src\PDFTrailerTests.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -38,6 +38,7 @@ library IshikoPDF
         ../../include/Ishiko/PDF/PDFFile.hpp
         ../../include/Ishiko/PDF/PDFHeader.hpp
         ../../include/Ishiko/PDF/PDFObject.hpp
+        ../../include/Ishiko/PDF/PDFOutputStream.hpp
         ../../include/Ishiko/PDF/PDFTrailer.hpp
     }
 
@@ -48,6 +49,7 @@ library IshikoPDF
         ../../src/PDFDictionaryObject.cpp
         ../../src/PDFFile.cpp
         ../../src/PDFHeader.cpp
+        ../../src/PDFOutputStream.cpp
         ../../src/PDFTrailer.cpp
     }
 }

@@ -41,6 +41,9 @@
     <ClInclude Include="..\..\include\Ishiko\PDF\PDFObject.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Ishiko\PDF\PDFOutputStream.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\Ishiko\PDF\PDFTrailer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -59,6 +62,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\PDFHeader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\PDFOutputStream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\PDFTrailer.cpp">
