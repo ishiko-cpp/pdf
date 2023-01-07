@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2023 Xavier Leclercq
+    Copyright (c) 2011-2023 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/pdf/blob/main/LICENSE.txt
 */
@@ -9,6 +9,7 @@
 
 #include <Ishiko/FileSystem.hpp>
 #include <boost/filesystem.hpp>
+#include <string>
 
 namespace Ishiko
 {
@@ -21,9 +22,14 @@ namespace Ishiko
         void close();
 
         void write(const char* str);
+        void write(const std::string& str);
+        void incrementIndentation();
+        void decrementIndentation();
+        void writeIndentation();
 
     private:
         TextFile m_file;
+        std::string m_indentation;
     };
 }
 

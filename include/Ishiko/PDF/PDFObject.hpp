@@ -7,10 +7,16 @@
 #ifndef GUARD_ISHIKO_CPP_PDF_PDFOBJECT_HPP
 #define GUARD_ISHIKO_CPP_PDF_PDFOBJECT_HPP
 
+#include "PDFOutputStream.hpp"
+
 namespace Ishiko
 {
     class PDFObject
     {
+    public:
+        virtual ~PDFObject() = default;
+
+        virtual void serialize(PDFOutputStream& output_stream) const = 0;
     };
 }
 

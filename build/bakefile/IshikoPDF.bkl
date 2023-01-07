@@ -40,6 +40,7 @@ library IshikoPDF : IshikoFileSystem
         ../../include/Ishiko/PDF/PDFDictionaryObject.hpp
         ../../include/Ishiko/PDF/PDFFile.hpp
         ../../include/Ishiko/PDF/PDFHeader.hpp
+        ../../include/Ishiko/PDF/PDFLiteralStringObject.hpp
         ../../include/Ishiko/PDF/PDFNameObject.hpp
         ../../include/Ishiko/PDF/PDFObject.hpp
         ../../include/Ishiko/PDF/PDFOutputStream.hpp
@@ -53,6 +54,7 @@ library IshikoPDF : IshikoFileSystem
         ../../src/PDFDictionaryObject.cpp
         ../../src/PDFFile.cpp
         ../../src/PDFHeader.cpp
+        ../../src/PDFLiteralStringObject.cpp
         ../../src/PDFNameObject.cpp
         ../../src/PDFOutputStream.cpp
         ../../src/PDFTrailer.cpp

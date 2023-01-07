@@ -23,13 +23,16 @@
     <ClInclude Include="..\..\src\PDFCrossReferenceTableTests.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\PDFDictionaryObjectTests.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\PDFFileTests.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\PDFHeaderTests.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\PDFDictionaryObjectTests.hpp">
+    <ClInclude Include="..\..\src\PDFLiteralStringObjectTests.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\PDFNameObjectTests.hpp">
@@ -52,13 +55,16 @@
     <ClCompile Include="..\..\src\PDFCrossReferenceTableTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\PDFDictionaryObjectTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\PDFFileTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\PDFHeaderTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\PDFDictionaryObjectTests.cpp">
+    <ClCompile Include="..\..\src\PDFLiteralStringObjectTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\PDFNameObjectTests.cpp">
