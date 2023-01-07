@@ -1,4 +1,5 @@
 ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/pdf/include/Ishiko/PDF.bkl;
 import $(ishikopath)/test-framework/include/Ishiko/TestFramework/Core.bkl;
 
 toolsets = gnu vs2019 vs2017 vs2015 vs2013;
@@ -9,7 +10,7 @@ vs2017.solutionfile = ../vc15/IshikoPDFTests.sln;
 vs2015.solutionfile = ../vc14/IshikoPDFTests.sln;
 vs2013.solutionfile = ../vc12/IshikoPDFTests.sln;
 
-program IshikoPDFTests : IshikoTestFrameworkCore
+program IshikoPDFTests : IshikoPDF, IshikoTestFrameworkCore
 {
     archs = x86 x86_64;
 
