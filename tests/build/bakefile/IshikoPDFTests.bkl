@@ -20,8 +20,14 @@ program IshikoPDFTests : IshikoTestFrameworkCore
         libs += fmt boost_filesystem;
     }
 
+    headers
+    {
+        ../../src/PDFFileTests.hpp
+    }
+
     sources
     {
         ../../src/main.cpp
+        ../../src/PDFFileTests.cpp
     }
 }
