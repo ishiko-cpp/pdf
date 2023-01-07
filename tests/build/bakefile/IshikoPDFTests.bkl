@@ -23,12 +23,20 @@ program IshikoPDFTests : IshikoPDF, IshikoTestFrameworkCore
 
     headers
     {
+        ../../src/PDFBodyTests.hpp
+        ../../src/PDFCrossReferenceTableTests.hpp
         ../../src/PDFFileTests.hpp
+        ../../src/PDFHeaderTests.hpp
+        ../../src/PDFTrailerTests.hpp
     }
 
     sources
     {
         ../../src/main.cpp
+        ../../src/PDFBodyTests.cpp
+        ../../src/PDFCrossReferenceTableTests.cpp
         ../../src/PDFFileTests.cpp
+        ../../src/PDFHeaderTests.cpp
+        ../../src/PDFTrailerTests.cpp
     }
 }

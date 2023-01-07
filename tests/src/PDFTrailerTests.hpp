@@ -4,15 +4,15 @@
     See https://github.com/ishiko-cpp/pdf/blob/main/LICENSE.txt
 */
 
-#ifndef GUARD_ISHIKO_CPP_PDF_TESTS_PDFFILETESTS_HPP
-#define GUARD_ISHIKO_CPP_PDF_TESTS_PDFFILETESTS_HPP
+#ifndef GUARD_ISHIKO_CPP_PDF_TESTS_PDFTRAILERTESTS_HPP
+#define GUARD_ISHIKO_CPP_PDF_TESTS_PDFTRAILERTESTS_HPP
 
 #include <Ishiko/TestFramework/Core.hpp>
 
-class PDFFileTests : public Ishiko::TestSequence
+class PDFTrailerTests : public Ishiko::TestSequence
 {
 public:
-    PDFFileTests(const Ishiko::TestNumber& number, const Ishiko::TestContext& context);
+    PDFTrailerTests(const Ishiko::TestNumber& number, const Ishiko::TestContext& context);
 
 private:
     static void ConstructorTest1(Ishiko::Test& test);

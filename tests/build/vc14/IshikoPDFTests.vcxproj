@@ -157,10 +157,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\PDFBodyTests.cpp" />
+    <ClCompile Include="..\..\src\PDFCrossReferenceTableTests.cpp" />
     <ClCompile Include="..\..\src\PDFFileTests.cpp" />
+    <ClCompile Include="..\..\src\PDFHeaderTests.cpp" />
+    <ClCompile Include="..\..\src\PDFTrailerTests.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\PDFBodyTests.hpp" />
+    <ClInclude Include="..\..\src\PDFCrossReferenceTableTests.hpp" />
     <ClInclude Include="..\..\src\PDFFileTests.hpp" />
+    <ClInclude Include="..\..\src\PDFHeaderTests.hpp" />
+    <ClInclude Include="..\..\src\PDFTrailerTests.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
