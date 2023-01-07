@@ -56,8 +56,8 @@ $(if $(_builddir_error),$(error Failed to create build directory: $(_builddir_er
 endif
 all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoPDF-d,IshikoPDF).a
 
-../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoPDF-d,IshikoPDF).a: $(_builddir)IshikoPDF_PDFBody.o $(_builddir)IshikoPDF_PDFCrossReferenceTable.o $(_builddir)IshikoPDF_PDFFile.o $(_builddir)IshikoPDF_PDFHeader.o $(_builddir)IshikoPDF_PDFTrailer.o
-	$(AR) rc $@ $(_builddir)IshikoPDF_PDFBody.o $(_builddir)IshikoPDF_PDFCrossReferenceTable.o $(_builddir)IshikoPDF_PDFFile.o $(_builddir)IshikoPDF_PDFHeader.o $(_builddir)IshikoPDF_PDFTrailer.o
+../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoPDF-d,IshikoPDF).a: $(_builddir)IshikoPDF_PDFBody.o $(_builddir)IshikoPDF_PDFCrossReferenceTable.o $(_builddir)IshikoPDF_PDFDictionaryObject.o $(_builddir)IshikoPDF_PDFFile.o $(_builddir)IshikoPDF_PDFHeader.o $(_builddir)IshikoPDF_PDFTrailer.o
+	$(AR) rc $@ $(_builddir)IshikoPDF_PDFBody.o $(_builddir)IshikoPDF_PDFCrossReferenceTable.o $(_builddir)IshikoPDF_PDFDictionaryObject.o $(_builddir)IshikoPDF_PDFFile.o $(_builddir)IshikoPDF_PDFHeader.o $(_builddir)IshikoPDF_PDFTrailer.o
 	$(RANLIB) $@
 
 $(_builddir)IshikoPDF_PDFBody.o: ../../src/PDFBody.cpp
@@ -65,6 +65,9 @@ $(_builddir)IshikoPDF_PDFBody.o: ../../src/PDFBody.cpp
 
 $(_builddir)IshikoPDF_PDFCrossReferenceTable.o: ../../src/PDFCrossReferenceTable.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFCrossReferenceTable.cpp
+
+$(_builddir)IshikoPDF_PDFDictionaryObject.o: ../../src/PDFDictionaryObject.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFDictionaryObject.cpp
 
 $(_builddir)IshikoPDF_PDFFile.o: ../../src/PDFFile.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFFile.cpp

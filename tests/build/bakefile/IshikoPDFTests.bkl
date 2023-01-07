@@ -27,6 +27,7 @@ program IshikoPDFTests : IshikoPDF, IshikoTestFrameworkCore
         ../../src/PDFCrossReferenceTableTests.hpp
         ../../src/PDFFileTests.hpp
         ../../src/PDFHeaderTests.hpp
+        ../../src/PDFDictionaryObjectTests.hpp
         ../../src/PDFTrailerTests.hpp
     }
 
@@ -37,6 +38,7 @@ program IshikoPDFTests : IshikoPDF, IshikoTestFrameworkCore
         ../../src/PDFCrossReferenceTableTests.cpp
         ../../src/PDFFileTests.cpp
         ../../src/PDFHeaderTests.cpp
+        ../../src/PDFDictionaryObjectTests.cpp
         ../../src/PDFTrailerTests.cpp
     }
 }

@@ -6,6 +6,7 @@
 
 #include "PDFBodyTests.hpp"
 #include "PDFCrossReferenceTableTests.hpp"
+#include "PDFDictionaryObjectTests.hpp"
 #include "PDFFileTests.hpp"
 #include "PDFHeaderTests.hpp"
 #include "PDFTrailerTests.hpp"
@@ -24,6 +25,7 @@ int main(int argc, char* argv[])
         TestHarness theTestHarness("Ishiko/C++ PDF Library Tests", configuration);
 
         TestSequence& theTests = theTestHarness.tests();
+        theTests.append<PDFDictionaryObjectTests>();
         theTests.append<PDFHeaderTests>();
         theTests.append<PDFBodyTests>();
         theTests.append<PDFCrossReferenceTableTests>();

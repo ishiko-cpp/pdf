@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\PDFBody.cpp" />
     <ClCompile Include="..\..\src\PDFCrossReferenceTable.cpp" />
+    <ClCompile Include="..\..\src\PDFDictionaryObject.cpp" />
     <ClCompile Include="..\..\src\PDFFile.cpp" />
     <ClCompile Include="..\..\src\PDFHeader.cpp" />
     <ClCompile Include="..\..\src\PDFTrailer.cpp" />
@@ -161,8 +162,10 @@
     <ClInclude Include="..\..\include\Ishiko\PDF\linkoptions.hpp" />
     <ClInclude Include="..\..\include\Ishiko\PDF\PDFBody.hpp" />
     <ClInclude Include="..\..\include\Ishiko\PDF\PDFCrossReferenceTable.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\PDF\PDFDictionaryObject.hpp" />
     <ClInclude Include="..\..\include\Ishiko\PDF\PDFFile.hpp" />
     <ClInclude Include="..\..\include\Ishiko\PDF\PDFHeader.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\PDF\PDFObject.hpp" />
     <ClInclude Include="..\..\include\Ishiko\PDF\PDFTrailer.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
