@@ -5,3 +5,10 @@
 */
 
 #include "PDFFile.hpp"
+
+using namespace Ishiko;
+
+void PDFFile::serialize(PDFOutputStream& output_stream) const
+{
+    // TODO
+}

@@ -155,6 +155,8 @@
     <ClCompile Include="..\..\src\PDFDictionaryObject.cpp" />
     <ClCompile Include="..\..\src\PDFFile.cpp" />
     <ClCompile Include="..\..\src\PDFHeader.cpp" />
+    <ClCompile Include="..\..\src\PDFLiteralStringObject.cpp" />
+    <ClCompile Include="..\..\src\PDFNameObject.cpp" />
     <ClCompile Include="..\..\src\PDFOutputStream.cpp" />
     <ClCompile Include="..\..\src\PDFTrailer.cpp" />
   </ItemGroup>
@@ -166,6 +168,8 @@
     <ClInclude Include="..\..\include\Ishiko\PDF\PDFDictionaryObject.hpp" />
     <ClInclude Include="..\..\include\Ishiko\PDF\PDFFile.hpp" />
     <ClInclude Include="..\..\include\Ishiko\PDF\PDFHeader.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\PDF\PDFLiteralStringObject.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\PDF\PDFNameObject.hpp" />
     <ClInclude Include="..\..\include\Ishiko\PDF\PDFObject.hpp" />
     <ClInclude Include="..\..\include\Ishiko\PDF\PDFOutputStream.hpp" />
     <ClInclude Include="..\..\include\Ishiko\PDF\PDFTrailer.hpp" />

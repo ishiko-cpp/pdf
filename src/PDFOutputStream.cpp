@@ -29,3 +29,27 @@ void PDFOutputStream::write(const char* str)
 {
     m_file.write(str);
 }
+
+void PDFOutputStream::write(const std::string& str)
+{
+    m_file.write(str);
+}
+
+void PDFOutputStream::incrementIndentation()
+{
+    m_indentation.push_back('\t');
+}
+
+void PDFOutputStream::decrementIndentation()
+{
+    // TODO: what if negative indentation
+    if (!m_indentation.empty())
+    {
+        m_indentation.resize(m_indentation.size() - 1);
+    }
+}
+
+void PDFOutputStream::writeIndentation()
+{
+    m_file.write(m_indentation);
+}
