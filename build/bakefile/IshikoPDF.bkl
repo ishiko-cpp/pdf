@@ -32,11 +32,24 @@ library IshikoPDF
     {
         ../../include/Ishiko/PDF.hpp
         ../../include/Ishiko/PDF/linkoptions.hpp
+        ../../include/Ishiko/PDF/PDFBody.hpp
+        ../../include/Ishiko/PDF/PDFCrossReferenceTable.hpp
+        ../../include/Ishiko/PDF/PDFDictionaryObject.hpp
         ../../include/Ishiko/PDF/PDFFile.hpp
+        ../../include/Ishiko/PDF/PDFHeader.hpp
+        ../../include/Ishiko/PDF/PDFObject.hpp
+        ../../include/Ishiko/PDF/PDFOutputStream.hpp
+        ../../include/Ishiko/PDF/PDFTrailer.hpp
     }
 
     sources
     {
+        ../../src/PDFBody.cpp
+        ../../src/PDFCrossReferenceTable.cpp
+        ../../src/PDFDictionaryObject.cpp
         ../../src/PDFFile.cpp
+        ../../src/PDFHeader.cpp
+        ../../src/PDFOutputStream.cpp
+        ../../src/PDFTrailer.cpp
     }
 }

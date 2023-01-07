@@ -4,7 +4,13 @@
     See https://github.com/ishiko-cpp/pdf/blob/main/LICENSE.txt
 */
 
+#include "PDFBodyTests.hpp"
+#include "PDFCrossReferenceTableTests.hpp"
+#include "PDFDictionaryObjectTests.hpp"
 #include "PDFFileTests.hpp"
+#include "PDFHeaderTests.hpp"
+#include "PDFOutputStreamTests.hpp"
+#include "PDFTrailerTests.hpp"
 #include <Ishiko/TestFramework/Core.hpp>
 
 using namespace Ishiko;
@@ -20,6 +26,12 @@ int main(int argc, char* argv[])
         TestHarness theTestHarness("Ishiko/C++ PDF Library Tests", configuration);
 
         TestSequence& theTests = theTestHarness.tests();
+        theTests.append<PDFOutputStreamTests>();
+        theTests.append<PDFDictionaryObjectTests>();
+        theTests.append<PDFHeaderTests>();
+        theTests.append<PDFBodyTests>();
+        theTests.append<PDFCrossReferenceTableTests>();
+        theTests.append<PDFTrailerTests>();
         theTests.append<PDFFileTests>();
 
         return theTestHarness.run();

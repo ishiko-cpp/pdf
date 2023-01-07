@@ -56,12 +56,30 @@ $(if $(_builddir_error),$(error Failed to create build directory: $(_builddir_er
 endif
 all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoPDF-d,IshikoPDF).a
 
-../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoPDF-d,IshikoPDF).a: $(_builddir)IshikoPDF_PDFFile.o
-	$(AR) rc $@ $(_builddir)IshikoPDF_PDFFile.o
+../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoPDF-d,IshikoPDF).a: $(_builddir)IshikoPDF_PDFBody.o $(_builddir)IshikoPDF_PDFCrossReferenceTable.o $(_builddir)IshikoPDF_PDFDictionaryObject.o $(_builddir)IshikoPDF_PDFFile.o $(_builddir)IshikoPDF_PDFHeader.o $(_builddir)IshikoPDF_PDFOutputStream.o $(_builddir)IshikoPDF_PDFTrailer.o
+	$(AR) rc $@ $(_builddir)IshikoPDF_PDFBody.o $(_builddir)IshikoPDF_PDFCrossReferenceTable.o $(_builddir)IshikoPDF_PDFDictionaryObject.o $(_builddir)IshikoPDF_PDFFile.o $(_builddir)IshikoPDF_PDFHeader.o $(_builddir)IshikoPDF_PDFOutputStream.o $(_builddir)IshikoPDF_PDFTrailer.o
 	$(RANLIB) $@
+
+$(_builddir)IshikoPDF_PDFBody.o: ../../src/PDFBody.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFBody.cpp
+
+$(_builddir)IshikoPDF_PDFCrossReferenceTable.o: ../../src/PDFCrossReferenceTable.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFCrossReferenceTable.cpp
+
+$(_builddir)IshikoPDF_PDFDictionaryObject.o: ../../src/PDFDictionaryObject.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFDictionaryObject.cpp
 
 $(_builddir)IshikoPDF_PDFFile.o: ../../src/PDFFile.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFFile.cpp
+
+$(_builddir)IshikoPDF_PDFHeader.o: ../../src/PDFHeader.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFHeader.cpp
+
+$(_builddir)IshikoPDF_PDFOutputStream.o: ../../src/PDFOutputStream.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFOutputStream.cpp
+
+$(_builddir)IshikoPDF_PDFTrailer.o: ../../src/PDFTrailer.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PDF -std=c++11 ../../src/PDFTrailer.cpp
 
 clean:
 	rm -f $(_builddir)*.o
