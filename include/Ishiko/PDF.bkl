@@ -1,0 +1,20 @@
+setting ISHIKO_CPP_PDF_ROOT
+{
+    help = "Path to the Ishiko PDF installation";
+    default = '$(ISHIKO_CPP)/pdf';
+}
+
+template IshikoPDF
+{
+    includedirs += $(ISHIKO_CPP_PDF_ROOT)/include;
+
+    if ($(toolset) == gnu)
+    {
+        libdirs += $(ISHIKO_CPP_PDF_ROOT)/lib;
+    }
+
+    if ($(toolset) != gnu)
+    {
+        libdirs += $(ISHIKO_CPP_PDF_ROOT)/lib/$(arch);
+    }
+}

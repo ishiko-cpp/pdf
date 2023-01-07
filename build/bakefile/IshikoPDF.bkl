@@ -1,0 +1,42 @@
+toolsets = gnu vs2019 vs2017 vs2015 vs2013;
+
+gnu.makefile = ../gnumake/GNUmakefile;
+vs2019.solutionfile = ../vc16/IshikoPDF.sln;
+vs2017.solutionfile = ../vc15/IshikoPDF.sln;
+vs2015.solutionfile = ../vc14/IshikoPDF.sln;
+vs2013.solutionfile = ../vc12/IshikoPDF.sln;
+
+library IshikoPDF
+{
+    archs = x86 x86_64;
+
+    includedirs += ../../include/Ishiko/PDF;
+
+    if ($(toolset) == gnu)
+    {
+        cxx-compiler-options = "-std=c++11";
+        outputdir = ../../lib;
+    }
+
+    if ($(toolset) != gnu)
+    {
+        outputdir = ../../lib/$(arch);
+    }
+
+    if ($(config) == Debug)
+    {
+        basename = IshikoPDF-d;
+    }
+
+    headers
+    {
+        ../../include/Ishiko/PDF.hpp
+        ../../include/Ishiko/PDF/linkoptions.hpp
+        ../../include/Ishiko/PDF/PDFFile.hpp
+    }
+
+    sources
+    {
+        ../../src/PDFFile.cpp
+    }
+}
